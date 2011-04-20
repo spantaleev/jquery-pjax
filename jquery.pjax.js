@@ -88,7 +88,7 @@ jQuery.pjax = function( options ) {
       xhr.setRequestHeader('X-PJAX', 'true')
     },
     error: function(){ window.location = options.url },
-    beforeSuccess: function() { },
+    beforeSuccess: function() { return true; },
     success: function( data ) {
       var state = { pjax: true };
       try {
@@ -116,8 +116,9 @@ jQuery.pjax = function( options ) {
         return window.location = options.url;
       }
 
-      //Now we're certain that this is a valid response
-      this.beforeSuccess();
+      if ( ! this.beforeSuccess()) {
+        return;
+	  }
 
       if ( data.title ) document.title = data.title;
       $.each(data.containers, function (selector, html) {

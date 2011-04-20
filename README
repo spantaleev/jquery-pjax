@@ -102,6 +102,8 @@ following additions:
         error - By default this callback reloads the target page once `timeout`
                 ms elapses.
 beforeSuccess - Callback to execute before the new content is put on the page.
+                If it returns true, pjax will apply the content.
+                If it returns false, pjax will ignore the response.
 
 
 ## $.pjax( options )
