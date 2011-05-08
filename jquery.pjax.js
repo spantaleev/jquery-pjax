@@ -149,6 +149,13 @@ jQuery.pjax = function( options ) {
       if ( (options.replace || options.push) && window._gaq )
         _gaq.push(['_trackPageview']);
 
+      var hash = window.location.hash.toString();
+      if (hash !== '') {
+        //We need to re-set the hash to make it scroll to the anchor
+        window.location.hash = '';
+        window.location.hash = hash;
+      }
+
       // Invoke their success handler if they gave us one.
       success.apply(this, arguments);
     }
