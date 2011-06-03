@@ -27,8 +27,8 @@ adds the ability for the server to return a more meaningful response
 (using JSON), which allows more than 1 container to be updated at the same time.
 More information on how that "Extended mode" works is available below.
 
-This fork won't be merged into the original, because its author wants to keep it
-shorter and simpler there. Because of that, it's maintained seperately.
+This "Extended mode" fork is no longer maintained, and is kept here only for
+historical purposes.
 
 
 ## what is it?
